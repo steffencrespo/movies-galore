@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import TableView from './table-view';
+import { Pane, Heading, SearchInput } from 'evergreen-ui'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Pane>
+        <Pane display='flex' padding={16} borderRadius={3}>
+          <Pane flex={1} alignItems="center" display="flex">
+            <Heading size={600}>Find your movie...</Heading>
+          </Pane>
+          <Pane>
+            <SearchInput marginRight={16}>
+            </SearchInput>
+          </Pane>
+        </Pane>
+        <Pane>
+          <TableView/>
+        </Pane>
+      </Pane>
     );
   }
 }
